@@ -16,7 +16,7 @@ await cartService.addItem(myCart, item3);
 await cartService.addItem(myCart, item4);
 await cartService.addItem(myWishlist, item2);
 await cartService.deleteItem(myCart, item1.name);
-await cartService.removeItem(myCart,item3);
+await cartService.removeItem(myCart,item4);
 
 
 
