@@ -1,1 +1,1 @@
-#Simulaçao de um carrinho de compras de commerce
+# Simulaçao de um carrinho de compras de E-commerce
