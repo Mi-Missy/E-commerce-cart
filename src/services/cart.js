@@ -31,6 +31,8 @@ async function removeItem(userCart,item) {
     if (userCart[indexFound].quantity > 1) {
        
         userCart[indexFound].quantity -= 1;
+        
+        //atualiza o valor do subtotal
         userCart[indexFound].subtotal =userCart[indexFound].subtotal-(userCart[indexFound].price);
         
         
