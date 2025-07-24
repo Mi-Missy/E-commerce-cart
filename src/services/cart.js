@@ -1,10 +1,10 @@
-//adicionar itens no carrinho
+//funçao para adicionar itens no carrinho
 
 async function addItem(userCart,item) {
     userCart.push(item);
 };
 
-//deleta itens do carrinho
+//função para deleta itens do carrinho
 
 async function deleteItem(userCart, name) {
     const index = userCart.findIndex((item) => item.name === name);
@@ -17,17 +17,19 @@ async function deleteItem(userCart, name) {
 
 };
 
-//remover itens do carrinho
+//função para remover itens do carrinho
 
 async function removeItem(userCart,item) {
     const indexFound = userCart.findIndex((p) => p.name === item.name);
     
+    //se o indice estiver fora de alcance, mostrar a mensagem avisando
     if (indexFound === -1) {
         
-        console.log("Item não emcontrado!");
+        console.log("Item não encontrado!");
         return;
     }
 
+    // se for encontrado, o item será removido
     if (userCart[indexFound].quantity > 1) {
        
         userCart[indexFound].quantity -= 1;
@@ -37,7 +39,7 @@ async function removeItem(userCart,item) {
        
         return  ;
     }
-
+    // se o item tiver apenas uma unidade, então ele será deletado
     if (userCart[indexFound].quantity == 1) {
        
         userCart.splice(indexFound, 1);
@@ -48,14 +50,15 @@ async function removeItem(userCart,item) {
     
 };
 
-//calcular o total
+//funçao para calcular o total
 
 async function calculateTotal(userCart) {
     const result = userCart.reduce((total, item) => total + item.subtotal,0);
-    console.log(result);
+    console.log(result+"\n");
     
 };
 
+//funçao para mostrar os itens do carrinho
 async function displayCart(userCart) {
     console.log("Cart list:");
 
